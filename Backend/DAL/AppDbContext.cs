@@ -9,8 +9,6 @@ namespace Backend.DAL
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<SLider> Sliders { get; set; }
         public DbSet<SliderContent> SliderContents { get; set; }
-        public DbSet<Bio> Bios { get; set; }
     }
 }

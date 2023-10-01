@@ -1,5 +1,7 @@
 ﻿using Backend.DAL;
+using Backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Controllers
 {
@@ -13,6 +15,11 @@ namespace Backend.Controllers
         }
         public IActionResult Index()
         {
+            HomeVM vm = new HomeVM
+            {
+                Sliders = _appDbContext.Sliders.ToList(),
+            };
+
             return View();
         }
     }

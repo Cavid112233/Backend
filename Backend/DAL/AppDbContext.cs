@@ -1,4 +1,5 @@
 ﻿using Backend.Entities;
+using Backend.Entities.Notice;
 using Backend.Entities.SliderSection;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,5 +11,6 @@ namespace Backend.DAL
         {
         }
         public DbSet<SliderContent> SliderContents { get; set; }
+        public DbSet<Notice> Notices { get; set; }
     }
 }

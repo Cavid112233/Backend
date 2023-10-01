@@ -17,6 +17,7 @@ namespace Backend.Controllers
         {
             HomeVM vm = new();
             vm.SliderContents = _appDbContext.SliderContents.ToList();
+            vm.Notices = _appDbContext.Notices.ToList();
 
             return View(vm);
         }

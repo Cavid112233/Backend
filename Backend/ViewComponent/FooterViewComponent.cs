@@ -1,5 +1,5 @@
-﻿using FinalProject.DAL;
-using FinalProject.ViewModels;
+﻿using Backend.DAL;
+using Backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProject.ViewComponents

@@ -11,7 +11,7 @@ namespace Backend.DAL
         {
         }
         public DbSet<SliderContent> SliderContents { get; set; }
-        public DbSet<ChooseArea> ChooseAreas { get; set; }
+        public DbSet<ChooseArea> ChooseArea { get; set; }
         public DbSet<Setting> Setting { get; set; }
     }
 }

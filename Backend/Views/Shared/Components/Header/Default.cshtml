@@ -1,0 +1,70 @@
+﻿ @model HomeVM 
+<header class="top">
+    <div class="header-area header-sticky fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="logo">
+                        <a href="index.html"><img src="~/img/logo/@Model.Setting["HeaderLogo"]" alt="eduhome" /></a>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="content-wrapper one">
+                        <!-- Main Menu Start -->
+                        <div class="main-menu one text-right">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a asp-controller="home" asp-action="index">Home</a>
+                                        <ul>
+                                            <li><a asp-controller="home" asp-action="index">Home One</a></li>
+                                            <li><a href="index-2.html">Home Two</a></li>
+                                            <li><a href="index-3.html">Home Three</a></li>
+                                            <li><a href="index-4.html">Home Four</a></li>
+                                            <li><a href="index-5.html">Home Five</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a asp-controller="about" asp-action="index">About</a></li>
+                                    <li>
+                                        <a asp-controller="course" asp-action="index">courses</a>
+                                        <ul>
+                                            <li><a asp-controller="course" asp-action="index">courses</a></li>
+                                            <li><a asp-controller="course" asp-action="coursedetails">courses details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="event" asp-action="index">event</a>
+                                        <ul>
+                                            <li><a asp-controller="event" asp-action="index">event</a></li>
+
+                                            <li><a asp-controller="event" asp-action="eventdetails">event details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hidden-sm">
+                                        <a asp-controller="teacher" asp-action="index">teacher</a>
+                                        <ul>
+                                            <li><a asp-controller="teacher" asp-action="index">teacher</a></li>
+                                            <li><a asp-controller="teacher" asp-action="teacherdetails">teacher details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="blog" asp-action="index">blog</a>
+                                        <ul>
+                                            <li><a asp-controller="blog" asp-action="index">blog</a></li>
+
+                                            <li><a asp-controller="blog" asp-action="blogdetails">blog details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#">Buy Now</a>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu hidden-lg hidden-md one"></div>
+                        <!-- Main Menu End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

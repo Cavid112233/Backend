@@ -22,6 +22,8 @@
     <None Include="Views\Event\EventDetails.cshtml" />
     <None Include="Views\Event\Index.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Shared\Components\Footer\Default.cshtml" />
+    <None Include="Views\Shared\Components\Header\Default.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_SubscribePartial.cshtml" />
   </ItemGroup>

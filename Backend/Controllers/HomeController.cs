@@ -15,9 +15,11 @@ namespace Backend.Controllers
 
         public IActionResult Index()
         {
-            HomeVM vm = new();
-            vm.SliderContents = _appDbContext.SliderContents.ToList();
-            vm.ChooseArea = _appDbContext.ChooseArea.FirstOrDefault();    
+            HomeVM vm = new()
+            {
+                SliderContents = _appDbContext.SliderContents.ToList(),
+                ChooseArea = _appDbContext.ChooseArea.FirstOrDefault()
+            };
 
             return View(vm);
         }

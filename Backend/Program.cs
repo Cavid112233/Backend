@@ -1,31 +1,18 @@
-using Backend.DAL;
-using Microsoft.EntityFrameworkCore;
-using System;
+using Backend;
 
-namespace Backend
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-            var config = builder.Configuration;
-            builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-            }
+var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
+builder.Services.Register(config);
 
-            );
+var app = builder.Build();
+app.UseSession();
 
-            var app = builder.Build();
-            app.UseStaticFiles();
-            app.MapControllerRoute(
-                "default",
-                "{controller=home}/{action=index}/{id?}"
 
-                );
-            app.Run();
-        }
-    }
-}
+
+app.MapControllerRoute(
+    "default",
+    "{controller=home}/{action=index}/{id?}"
+    );
+app.UseStaticFiles();
+
+app.Run();

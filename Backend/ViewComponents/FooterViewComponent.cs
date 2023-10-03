@@ -1,21 +1,20 @@
 ﻿using Backend.DAL;
 using Backend.ViewModels;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.ViewComponents
 {
-    public class HeaderViewComponent:ViewComponent
+    public class FooterViewComponent : ViewComponent
     {
-            private readonly AppDbContext _appDbContext;
-        public HeaderViewComponent(AppDbContext appDbContext)
+        private readonly AppDbContext _appDbContext;
+        public FooterViewComponent(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
-          
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            HomeVM vm = new HomeVM()
+            HomeVM vm = new()
             {
 
                 Setting = _appDbContext.Setting.ToDictionary(s => s.Key, s => s.Value)
@@ -24,6 +23,9 @@ namespace FinalProject.ViewComponents
 
 
             return View(await Task.FromResult(vm));
+
         }
+
     }
+
 }

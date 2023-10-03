@@ -13,13 +13,5 @@ namespace Backend.ViewComponents
         {
             _context = context;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
-        {
-            HomeVM vm = new HomeVM();
-            {
-                Settings = _context.Settings.ToDictionary(s => s.Key, s => s.Value);
-            };
-            return View(await Task.FromResult(vm));
-        }
     }
 }

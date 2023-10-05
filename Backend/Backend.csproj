@@ -7,21 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Views\About\Index.cshtml" />
-    <None Include="Views\Blog\BlogDetails.cshtml" />
-    <None Include="Views\Blog\Index.cshtml" />
-    <None Include="Views\Courses\CoursesDetails.cshtml" />
-    <None Include="Views\Courses\Index.cshtml" />
-    <None Include="Views\Event\EventDetails.cshtml" />
-    <None Include="Views\Event\Index.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Shared\Components\Footer\Default.cshtml" />
-    <None Include="Views\Shared\Components\Header\Default.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\Shared\_SubscribePartial.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>

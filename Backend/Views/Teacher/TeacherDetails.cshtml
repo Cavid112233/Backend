@@ -1,9 +1,10 @@
-﻿﻿@{
-    ViewData["Title"] = "DetailTeacher";
+﻿@model TeacherVM
+@{
+    ViewData["Title"] = "index";
 }
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
-    <div class="banner-area text-center"> 
+    <div class="banner-area text-center">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -24,20 +25,20 @@
         <div class="row">
             <div class="col-md-5 col-sm-5 col-xs-12">
                 <div class="teacher-details-img">
-                    <img src="~/img/teacher/teacher-details.jpg" alt="teacher">
+                    <img src="~/img/teacher/@Model.Teachers.FirstOrDefault().ImageUrl" alt="teacher">
                 </div>
             </div>
             <div class="col-md-7 col-sm-7 col-xs-12">
                 <div class="teacher-details-content ml-50">
-                    <h2>STUART KELVIN</h2>
-                    <h5>Associate Professor</h5>
+                    <h2>@Model.Teachers.FirstOrDefault().TeacherName</h2>
+                    <h5>@Model.Teachers.FirstOrDefault().Profession</h5>
                     <h4>about me</h4>
                     <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium ue laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quas i architeo beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas </p>
                     <ul>
-                        <li><span>degree: </span>PHD in Micro Biology</li>
-                        <li><span>experience: </span>7 years experience</li>
-                        <li><span>hobbies: </span>music, travelling, catching fish</li>
-                        <li><span>faculty: </span>Din, Department of Micro Biology</li>
+                        <li><span>degree:@Model.Teachers.FirstOrDefault().Degree </span></li>
+                        <li><span>experience: </span>@Model.Teachers.FirstOrDefault().Experience</li>
+                        <li><span>hobbies: </span>@Model.Teachers.FirstOrDefault().Hobbies</li>
+                        <li><span>faculty: </span>@Model.Teachers.FirstOrDefault().Faculty</li>
                     </ul>
                 </div>
             </div>
@@ -130,4 +131,3 @@
     </div>
 </div>
 <!-- Teacher End -->
-<partial name="_SubscribePartial" />

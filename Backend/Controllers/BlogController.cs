@@ -8,7 +8,7 @@ namespace Backend.Controllers
         {
             return View();
         }
-        public IActionResult BlogDetails()
+        public IActionResult BlogDetails(int id)
         {
             return View();
         }

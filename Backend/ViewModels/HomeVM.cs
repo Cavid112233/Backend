@@ -1,4 +1,5 @@
 ﻿
+using Backend.Entities;
 using Backend.Entities.ChooseArea;
 using Backend.Entities.SliderSection;
 
@@ -9,5 +10,6 @@ namespace Backend.ViewModels
         public List<SliderContent> SliderContents { get; set; }
         public ChooseArea ChooseArea { get; set; }
         public Dictionary<string, string> Setting { get; set; }
+        public SliderTestimonial SliderTestimonial { get; internal set; }
     }
 }

@@ -1,14 +1,14 @@
 ﻿@model HomeVM
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "index";
 }
-		<!-- Background Area Start -->
+<!-- Background Area Start -->
         <section id="slider-container" class="slider-area"> 
             <div class="slider-owl owl-theme owl-carousel"> 
-                @foreach (var item in Model.SliderContents)
+                <!-- Start Slingle Slide -->
+        @foreach(var item in Model.SliderContents)
         {
-            <!-- Start Slingle Slide -->
-            <div class="single-slide item" style="background-image: url(img/slider/@item.ImageURL)">
+            <div class="single-slide item" style="background-image: url(/img/slider/@item.ImageURL)">
                 <!-- Start Slider Content -->
                 <div class="slider-content-area">
                     <div class="container">
@@ -16,9 +16,10 @@
                             <div class="col-md-7 col-md-offset-left-5">
                                 <div class="slide-content-wrapper">
                                     <div class="slide-content">
-                                        @Html.Raw(item.Title)
+                                        <h3>@item.Title </h3>
+                                    
                                         <p>@item.Desc</p>
-                                        <a class="default-btn" asp-controller="about" asp-action="index">Learn more</a>
+                                        <a class="default-btn" href="about.html">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -27,92 +28,91 @@
                 </div>
                 <!-- Start Slider Content -->
             </div>
-            <!-- End Slingle Slide -->
-        }							
-            </div>
+        
+        }
+          </div>
         </section>
 		<!-- Background Area End -->
         <!-- Notice Start -->
-<section class="notice-area pt-150 pb-150">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="notice-left">
-                    <h3>notice board</h3>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+        <section class="notice-area pt-150 pb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="notice-left">
+                            <h3>notice board</h3>
+                            <div class="single-notice-left mb-25 pb-25">
+                                <h4>5, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left mb-25 pb-25">
+                                <h4>4, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left pb-75">
+                                <h4>3, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left mb-25 pb-25">
+                                <h4>5, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left mb-25 pb-25">
+                                <h4>4, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left pb-70">
+                                <h4>3, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left mb-25 pb-25">
+                                <h4>5, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left mb-25 pb-25">
+                                <h4>4, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                            <div class="single-notice-left pb-70">
+                                <h4>3, June 2017</h4>
+                                <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-75">
-                        <h4>3, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-70">
-                        <h4>3, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>5, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left mb-25 pb-25">
-                        <h4>4, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                    </div>
-                    <div class="single-notice-left pb-70">
-                        <h4>3, June 2017</h4>
-                        <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="notice-right">
+                            <div class="single-notice-right mb-25 pb-25">
+                                <h3>PROFESSIONAL TEACHER</h3>
+                                <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
+                            </div> 
+                            <div class="single-notice-right mb-25 pb-25">
+                                <h3>Online courses</h3>
+                                <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
+                            </div> 
+                            <div class="single-notice-right">
+                                <h3>easy to addmission</h3>
+                                <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
+                            </div>   
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="notice-right">
-                    <div class="single-notice-right mb-25 pb-25">
-                        <h3>PROFESSIONAL TEACHER</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                    <div class="single-notice-right mb-25 pb-25">
-                        <h3>Online courses</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                    <div class="single-notice-right">
-                        <h3>easy to addmission</h3>
-                        <p>I must explain to you how all this mistaken idea of denouncing pleure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
         <!-- Notice End -->
         <!-- Choose Start -->
-<section class="choose-area pb-85 pt-77">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-left-4 col-sm-8 col-md-offset-left-4">
-                <div class="choose-content text-left">
-                    
-                    <h2>@Model.ChooseArea.Title</h2>
-                    <p>@Model.ChooseArea.Desc </p>
-
-                    <a class="default-btn" href="course-details.html">@Model.ChooseArea.ButtonName</a>
+        <section class="choose-area pb-85 pt-77">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-left-4 col-sm-8 col-md-offset-left-4">
+                        <div class="choose-content text-left">
+                            <h2>@Model.ChooseArea.Title</h2>
+                            <p>@Model.ChooseArea.Desc </p>
+                            
+                            <a class="default-btn" href="course-details.html">@Model.ChooseArea.ButtonName</a>
+                        </div>  
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
         <!-- Choose Area End -->
         <!-- Courses Area Start -->
         <div class="courses-area pt-150 text-center">
@@ -120,7 +120,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="section-title">
-                            <img src="img/icon/section.png" alt="section-title">
+                            <img src="~/img/icon/section.png" alt="section-title">
                             <h2>COURSES WE OFFER</h2>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                 <div class="row">
                      <div class="col-xs-12">
                         <div class="section-title">
-                            <img src="img/icon/section.png" alt="section-title">
+                            <img src="~/img/icon/section.png" alt="section-title">
                             <h2>UPCOMMING EVENTS</h2>
                         </div>
                     </div>
@@ -343,12 +343,12 @@
                             <div class="single-testimonial">
                                 <div class="testimonial-info">
                                     <div class="testimonial-img">
-                                        <img src="img/testimonial/testimonial.jpg" alt="testimonial">
+                                        <img src="~/img/testimonial/@Model.SliderTestimonial.ImageUrl" alt="testimonial">
                                     </div>
                                     <div class="testimonial-content">
-                                        <p>I must explain to you how all this mistaken idea of denoung pleure and praising pain was born and I will give you a coete account of the system, and expound the actual</p>
-                                        <h4>David Morgan</h4>
-                                        <h5>Student, CSE</h5>
+                                        <p>@Model.SliderTestimonial.Description</p>
+                                        <h4>@Model.SliderTestimonial.Name</h4>
+                                        <h5>@Model.SliderTestimonial.Profession</h5>
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +364,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="section-title text-center">
-                            <img src="img/icon/section.png" alt="section-title">
+                            <img src="~/img/icon/section.png" alt="section-title">
                             <h2>LATEST FROM BLOG</h2>
                         </div>
                     </div>
@@ -431,6 +431,4 @@
             </div>
         </div>
         <!-- Blog Area End -->
-        <partial name="_SubscribePartial" />
-
-
+@await Html.PartialAsync("_SubscribeNow",new SubscribeVM());

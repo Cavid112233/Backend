@@ -3,7 +3,7 @@ using Backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace FinalProject.ViewComponents
+namespace Backend.ViewComponents
 {
     public class FooterViewComponent : ViewComponent
     {

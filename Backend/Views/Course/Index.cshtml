@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "index";
 }
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
@@ -192,4 +192,4 @@
     </div>
 </div>
 <!-- Course End -->
-<partial name="_SubscribePartial" />
+@await Html.PartialAsync("_SubscribeNow",new SubscribeVM());

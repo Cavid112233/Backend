@@ -2,13 +2,13 @@
 
 namespace Backend.Controllers
 {
-    public class CoursesController : Controller
+    public class CourseController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult CoursesDetails()
+        public IActionResult CourseDetails()
         {
             return View();
         }

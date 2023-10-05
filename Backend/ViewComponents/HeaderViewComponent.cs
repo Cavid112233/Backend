@@ -3,7 +3,7 @@ using Backend.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FinalProject.ViewComponents
+namespace Backend.ViewComponents
 {
     public class HeaderViewComponent:ViewComponent
     {

@@ -18,7 +18,8 @@ namespace Backend.Controllers
             HomeVM vm = new()
             {
                 SliderContents = _appDbContext.SliderContents.ToList(),
-                ChooseArea = _appDbContext.ChooseArea.FirstOrDefault()
+                ChooseArea = _appDbContext.ChooseArea.FirstOrDefault(),
+                SliderTestimonial = _appDbContext.SliderTestimonial.FirstOrDefault(),
             };
 
             return View(vm);

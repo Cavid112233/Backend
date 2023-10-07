@@ -1,10 +1,9 @@
 ﻿using Backend.DAL;
 using Backend.Extension;
 using Backend.Entities;
-using Backend.ViewModels.AdminTeacher;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Backend.ViewModels.TeacherAdmin;
 
 namespace Backend.Areas.AdminArea.Controllers
 {
@@ -46,12 +45,12 @@ namespace Backend.Areas.AdminArea.Controllers
 
             if (_appDbContext.Teachers.Any(c => c.TeacherName.ToLower() == createTeacherVM.TeacherName.ToLower()))
             {
-                ModelState.AddModelError("Name", "Bu Adli Melumat Movcuddur");
+                ModelState.AddModelError("Name", "Bu adli melumat daxil edilib");
                 return View();
             }
             if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("Photo", "Bos Qoyma");
+                ModelState.AddModelError("Photo", "Bos qoymaq olmaz");
                 return View();
             }
             if (!createTeacherVM.Photo.ContentType.Contains("image/"))
@@ -61,7 +60,7 @@ namespace Backend.Areas.AdminArea.Controllers
             }
             if (createTeacherVM.Photo.Length / 1024 > 1000)
             {
-                ModelState.AddModelError("Photo", "Olchu boyukdur");
+                ModelState.AddModelError("Photo", "olcusu cox boyukdu");
                 return View();
             }
             Teacher teacher = new();
@@ -79,7 +78,7 @@ namespace Backend.Areas.AdminArea.Controllers
             contact.Vimeo = createTeacherVM.Vimeo;
             contact.Facebook = createTeacherVM.Facebook;
             contact.PhoneCall = createTeacherVM.PhoneCall;
-            contact.EMail = createTeacherVM.EMail;
+            contact.Email = createTeacherVM.Email;
             contact.PhoneCall = createTeacherVM.PhoneCall;
             contact.Skype = createTeacherVM.Skype;
             contact.Pinterest = createTeacherVM.Pinterest;
@@ -134,7 +133,7 @@ namespace Backend.Areas.AdminArea.Controllers
                 Vimeo = existteacher.Contact.FirstOrDefault().Vimeo,
                 Facebook = existteacher.Contact.FirstOrDefault().Facebook,
                 PhoneCall = existteacher.Contact.FirstOrDefault().PhoneCall,
-                EMail = existteacher.Contact.FirstOrDefault().EMail,
+                EMail = existteacher.Contact.FirstOrDefault().Email,
                 Pinterest = existteacher.Contact.FirstOrDefault().Pinterest,
                 Skype = existteacher.Contact.FirstOrDefault().Skype,
 
@@ -176,7 +175,7 @@ namespace Backend.Areas.AdminArea.Controllers
             contact.Vimeo = updateTeacherVM.Vimeo;
             contact.Facebook = updateTeacherVM.Facebook;
             contact.PhoneCall = updateTeacherVM.PhoneCall;
-            contact.EMail = updateTeacherVM.EMail;
+            contact.Email = updateTeacherVM.EMail;
             contact.PhoneCall = updateTeacherVM.PhoneCall;
             contact.Skype = updateTeacherVM.Skype;
             contact.Pinterest = updateTeacherVM.Pinterest;

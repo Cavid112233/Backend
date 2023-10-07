@@ -32,5 +32,6 @@ namespace Backend.DAL
         public DbSet<TeacherSkill> TeacherSkill { get; set; }
 
         public DbSet<TeacherContact> TeacherContact { get; set; }
+        public DbSet<FuturesCourse> FuturesCourses { get; set; }
     }
 }

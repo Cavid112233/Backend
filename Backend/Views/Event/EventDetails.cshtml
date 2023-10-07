@@ -1,4 +1,4 @@
-﻿@model CommentVM
+﻿@model  EventPrivateVM
 @{
     ViewData["Title"] = "eventdetails";
 }
@@ -26,40 +26,33 @@
             <div class="col-md-8">
                 <div class="event-details">
                     <div class="event-details-img">
-                        <img src="~/img/event/event-details.jpg" alt="event-details">
+                        <img src="~/img/event/@Model.ImageUrl" alt="event-details">
                         <div class="event-date">
-                            <h3>20 <span>jun</span></h3>
+                            <h3>@Model.ExactDate</h3>
                         </div>
                     </div>
                     <div class="event-details-content">
-                        <h2>ADVANCE WED DEVELOPMENT WORKSHOP</h2>
+                        <h2>@Model.EventName</h2>
                         <ul>
-                            <li><span>time : </span>9:30am - 4:45pm</li>
-                            <li><span>venue : </span>Cristal Centre, 254 New Yourk</li>
+                            <li><span>time : </span>@Model.DateStart.ToString("HH:mm")   @Model.DateEnd.ToString("HH:mm")</li>
+                            <li><span>venue : </span>@Model.Venue</li>
                         </ul>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui </p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem </p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                      <p>@Model.Description</p>
                         <div class="speakers-area fix">
                             <h4>speakers</h4>
-                            <div class="single-speaker">
-                                <div class="speaker-img">
-                                    <img src="~/img/event/speaker1.jpg" alt="speaker">
+                            @foreach(var item in Model.TellUses)
+                            {
+                                <div class="single-speaker">
+                                    <div class="speaker-img">
+                                        <img src="~/img/event/@item.ImageUrl" alt="speaker">
+                                    </div>
+                                    <div class="speaker-name">
+                                        <h5>@item.SpeakerName</h5>
+                                        <p>@item.Profession </p>
+                                    </div>
                                 </div>
-                                <div class="speaker-name">
-                                    <h5>Anthony Smith</h5>
-                                    <p>CEO, Hastech </p>
-                                </div>
-                            </div>
-                            <div class="single-speaker">
-                                <div class="speaker-img">
-                                    <img src="~/img/event/speaker2.jpg" alt="speaker">
-                                </div>
-                                <div class="speaker-name">
-                                    <h5>Lucy Rose</h5>
-                                    <p>Developer, STD </p>
-                                </div>
-                            </div>
+                            }
+                            
                         </div>
                     </div>
 
@@ -71,17 +64,17 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>Name</p>
-                                    <input asp-for="Name" placeholder="Name">
+                                    <input asp-for="@Model.Comment.Name" placeholder="Name">
                                 </div>
                                 <div class="col-md-12">
                                     <p>Email</p>
-                                    <input asp-for="Email" placeholder="Email">
+                                    <input asp-for="@Model.Comment.Email" placeholder="Email">
                                 </div>
                                 <div class="col-md-12">
                                     <p>Subject</p>
-                                    <input asp-for="Subject" placeholder="Subject">
+                                    <input asp-for="@Model.Comment.Subject" placeholder="Subject">
                                     <p>Massage</p>
-                                    <textarea asp-for=Massage cols="15" rows="10"></textarea>
+                                    <textarea asp-for="@Model.Comment.Massage" cols="15" rows="10"></textarea>
                                 </div>
                             </div>
                             <button class="reply-btn" href="#" data-text="send"><span>send message</span></button>
@@ -108,12 +101,12 @@
                     <div class="single-blog-widget mb-50">
                         <h3>categories</h3>
                         <ul>
-                            <li><a href="#">CSS Engineering (10)</a></li>
-                            <li><a href="#">Political Science (12)</a></li>
-                            <li><a href="#">Micro Biology (08)</a></li>
-                            <li><a href="#">HTML5 &amp; CSS3 (15)</a></li>
-                            <li><a href="#">Web Design (20)</a></li>
-                            <li><a href="#">PHP (23)</a></li>
+                            @foreach(var item in Model.Courses)
+                            {
+
+                                <li><a href="#">@item.Name @item.CourseCount</a></li>
+                            }
+                        
                         </ul>
                     </div>
                     <div class="single-blog-widget mb-50">

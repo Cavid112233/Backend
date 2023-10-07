@@ -1,4 +1,4 @@
-﻿@model CommentVM
+﻿@model BlogPrivateVM
 @{
     ViewData["Title"] = "blogdetail";
 }
@@ -26,36 +26,42 @@
             <div class="col-md-8">
                 <div class="blog-details">
                     <div class="blog-details-img">
-                        <img src="~/img/blog/blog-detail.jpg" alt="blog-details">
+                        <img src="~/img/blog/@Model.ImageUrl" alt="blog-details">
                     </div>
                     <div class="blog-details-content">
-                        <h2>I must explain to you how all this a mistaken idea </h2>
-                        <h6>By Alex  /  June 20, 2017  /  <i class="fa fa-comments-o"></i> 4</h6>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human haness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque sa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam volutatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui </p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human haness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
-                        <p class="quote">I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human haness pcias unde omnis iste natus error sit voluptatem accusantium doloremque la udantium, totam rem aperiam</p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human haness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque sa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo emo enim ipsam</p>
+                       <h1>
+                            @if(Model.TitleName.Length<50)
+                            {
+                                @Model.TitleName
+                            }
+                            else
+                            {
+                              @Model.TitleName.Substring(0,50)
+                            }
+                        </h1>
+                        <h6>@Model.Description  <i class="fa fa-comments-o"></i> 4</h6>
+                        <p>@Model.TitleName</p>
                     </div>
 
                     <div class="reply-area">
                         <h3>LEAVE A REPLY</h3>
                         <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut<br> the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
                         <form asp-controller="partial" asp-action="BlogComment" id="contact-form" method="post">
-                            <input asp-for="ID" />
+                          
                             <div class="row">
                                 <div class="col-md-12">
                                     <p>Name</p>
-                                    <input asp-for="Name" placeholder="Name">
+                                    <input asp-for="@Model.CommentVM.Name" placeholder="Name">
                                 </div>
                                 <div class="col-md-12">
                                     <p>Email</p>
-                                    <input asp-for="Email" placeholder="Email">
+                                    <input asp-for="@Model.CommentVM.Email" placeholder="Email">
                                 </div>
                                 <div class="col-md-12">
                                     <p>Subject</p>
-                                    <input asp-for="Subject" placeholder="Subject">
+                                    <input asp-for="@Model.CommentVM.Subject" placeholder="Subject">
                                     <p>Massage</p>
-                                    <textarea asp-for=Massage cols="15" rows="10"></textarea>
+                                    <textarea asp-for="@Model.CommentVM.Massage" cols="15" rows="10"></textarea>
                                 </div>
                             </div>
                             <button class="reply-btn" href="#" data-text="send"><span>send message</span></button>
@@ -84,12 +90,11 @@
                     <div class="single-blog-widget mb-47">
                         <h3>categories</h3>
                         <ul>
-                            <li><a href="#">CSS Engineering (10)</a></li>
-                            <li><a href="#">Political Science (12)</a></li>
-                            <li><a href="#">Micro Biology (08)</a></li>
-                            <li><a href="#">HTML5 &amp; CSS3 (15)</a></li>
-                            <li><a href="#">Web Design (20)</a></li>
-                            <li><a href="#">PHP (23)</a></li>
+                            @foreach(var item in Model.courses)
+                            {
+                                <li><a href="#">@item.Name @item.CourseCount</a></li>
+                            }
+                    
                         </ul>
                     </div>
                     <div class="single-blog-widget mb-47">

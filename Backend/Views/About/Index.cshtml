@@ -28,7 +28,7 @@
                     <h2>@Model.AboutBanner.SecondTitle</h2>
                     <p>@Model.AboutBanner.Description</p>
                   
-                    <a class="default-btn" href="#">@Model.AboutBanner.ButtonTitle</a>
+                    <a class="default-btn" asp-action="index">@Model.AboutBanner.ButtonTitle</a>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
@@ -52,74 +52,30 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="~/img/teacher/teacher1.jpg" alt="teacher"></a>
+
+            
+                @foreach (var item in Model.Teachers)
+                {
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="single-teacher mb-45">
+                            <div class="single-teacher-img">
+                                <a asp-controller="teacher" asp-action="teacherdetails" asp-route-id="@item.Id"><img src="~/img/teacher/@item.ImageUrl" alt="teacher"></a>
+                            </div>
+                            <div class="single-teacher-content text-center">
+                                <h2><a href="teacher-details.html">@item.TeacherName</a></h2>
+                                <h4>@item.Profession</h4>
+                                <ul>
+                                    <li><a href="@item.Contact.FirstOrDefault().Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
+                                    <li><a href="@item.Contact.FirstOrDefault().Pinterest"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                    <li><a href="@item.Contact.FirstOrDefault().Vimeo"><i class="zmdi zmdi-vimeo"></i></a></li>
+                                    <li><a href="@item.Contact.FirstOrDefault().Twitter"><i class="zmdi zmdi-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">STUART KELVIN</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="~/img/teacher/teacher2.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">eamily cristian</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="~/img/teacher/teacher3.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">kevin williams</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 hidden-sm col-xs-12">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="~/img/teacher/teacher4.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">salina gomaze</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="https://www.pinterest.com/devitemsllc/"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                }
+            
+           
         </div>
     </div>
 </div>
@@ -133,12 +89,12 @@
                     <div class="single-testimonial">
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="~/img/testimonial/@Model.SliderTestimonial.ImageUrl" alt="testimonial">
+                                <img src="~/img/testimonial/@Model.TestimonialSlider.ImageUrl" alt="testimonial">
                             </div>
                             <div class="testimonial-content">
-                                <p>@Model.SliderTestimonial.Description</p>
-                                <h4>@Model.SliderTestimonial.Name</h4>
-                                <h5>@Model.SliderTestimonial.Profession</h5>
+                                <p>@Model.TestimonialSlider.Description</p>
+                                <h4>@Model.TestimonialSlider.Name</h4>
+                                <h5>@Model.TestimonialSlider.Profession</h5>
                             </div>
                         </div>
                     </div>
@@ -168,30 +124,18 @@
                 <div class="notice-left-wrapper">
                     <h3>notice board</h3>
                     <div class="notice-left">
-                        <div class="single-notice-left mb-23 pb-20">
-                            <h4>5, June 2017</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left hidden-sm mb-23 pb-20">
-                            <h4>4, June 2017</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left pb-70">
-                            <h4>3, June 2017</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left mb-23 pb-20">
-                            <h4>5, June 2017</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left hidden-sm mb-23 pb-20">
-                            <h4>4, June 2017</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left pb-70">
-                            <h4>3, June 2017</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
+
+                        @foreach(var item in Model.Events)
+                        {
+                            <div class="single-notice-left mb-23 pb-20">
+
+                                <h4>@item.ExactDate</h4>
+                                <p>@item.Description.Substring(0,200) </p>
+                            </div>
+                        }
+
+                       
+                   
                     </div>
                 </div>
             </div>

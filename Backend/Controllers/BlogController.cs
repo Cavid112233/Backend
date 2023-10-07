@@ -1,5 +1,4 @@
 ﻿using Backend.DAL;
-using Backend.Entities;
 using Backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +21,13 @@ namespace Backend.Controllers
         }
         public IActionResult BlogDetails(int id)
         {
+            var findedBlog = _context.Blogs.FirstOrDefault(c => c.Id == id);
+            BlogPrivateVM blogPrivateVM = new BlogPrivateVM();
+
+            blogPrivateVM.courses = _context.Courses.ToList();
+            blogPrivateVM.ImageUrl = findedBlog.ImageUrl;
+            blogPrivateVM.TitleName = findedBlog.TitleName;
+            blogPrivateVM.Description = findedBlog.Description;
             return View();
         }
     }

@@ -20,6 +20,7 @@ namespace Backend.Controllers
                 SliderContents = _appDbContext.SliderContents.ToList(),
                 ChooseArea = _appDbContext.ChooseArea.FirstOrDefault(),
                 SliderTestimonial = _appDbContext.SliderTestimonial.FirstOrDefault(),
+                Even
             };
 
             return View(vm);

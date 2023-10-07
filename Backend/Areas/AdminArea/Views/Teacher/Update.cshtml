@@ -1,0 +1,110 @@
+﻿﻿
+@model UpdateTeacherVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Teacher Form</h4>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Name</label>
+                    <input asp-for="TeacherName" class="form-control" placeholder="TeacherName">
+                    <span class="text-danger" asp-validation-for="TeacherName"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Profession</label>
+                    <input asp-for="Profession" class="form-control" placeholder="Profession">
+                    <span class="text-danger" asp-validation-for="Profession"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Degree</label>
+                    <input asp-for="Degree" class="form-control" placeholder="Degree">
+                    <span class="text-danger" asp-validation-for="Degree"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Faculty</label>
+                    <input asp-for="Faculty" class="form-control" placeholder="Faculty">
+                    <span class="text-danger" asp-validation-for="Faculty"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Experience</label>
+                    <input asp-for="Experience" class="form-control" placeholder="Experience">
+                    <span class="text-danger" asp-validation-for="Experience"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Desc</label>
+                    <input asp-for="AboutDesc" class="form-control" placeholder="AboutDesc">
+                    <span class="text-danger" asp-validation-for="AboutDesc"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Hobby</label>
+                    <input asp-for="Hobbies" class="form-control" placeholder="Hobby">
+                    <span class="text-danger" asp-validation-for="Hobbies"> </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Photo</label>
+                    <input asp-for="Photo" class="form-control" placeholder="Name">
+                    <span class="text-danger" asp-validation-for="Photo"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Name</label>
+                    <input asp-for="Twitter" class="form-control" placeholder="Twitter">
+                    <span class="text-danger" asp-validation-for="Twitter"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Profession</label>
+                    <input asp-for="EMail" class="form-control" placeholder="Email">
+                    <span class="text-danger" asp-validation-for="EMail"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Degree</label>
+                    <input asp-for="Facebook" class="form-control" placeholder="FaceBook">
+                    <span class="text-danger" asp-validation-for="Facebook"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Faculty</label>
+                    <input asp-for="PhoneCall" class="form-control" placeholder="PhoneCall">
+                    <span class="text-danger" asp-validation-for="PhoneCall"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Experience</label>
+                    <input asp-for="Skype" class="form-control" placeholder="Skype">
+                    <span class="text-danger" asp-validation-for="Skype"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Desc</label>
+                    <input asp-for="Pinterest" class="form-control" placeholder="Pinterest">
+                    <span class="text-danger" asp-validation-for="Pinterest"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Hobby</label>
+                    <input asp-for="Vimeo" class="form-control" placeholder="Vimeo">
+                    <span class="text-danger" asp-validation-for="Vimeo"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Hobby</label>
+                    <input asp-for="SkillPercantege" class="form-control" placeholder="SkillPercentage">
+                    <span class="text-danger" asp-validation-for="SkillPercantege"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Hobby</label>
+                    <input asp-for="SkillName" class="form-control" placeholder="SkillName">
+                    <span class="text-danger" asp-validation-for="SkillName"> </span>
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button asp-controller="teacher" asp-action="index" class="btn btn-light">Go Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <partial name="_ValidationPartial" />
+}

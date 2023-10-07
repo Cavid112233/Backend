@@ -1,6 +1,7 @@
 ﻿using Backend.DAL;
 using Backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Controllers
 {
@@ -19,6 +20,8 @@ namespace Backend.Controllers
             aboutVM.AboutBanner = _context.AboutBanner.FirstOrDefault();
             aboutVM.SliderTestimonial = _context.SliderTestimonial.FirstOrDefault();
             aboutVM.AboutVideo = _context.AboutVideo.FirstOrDefault();
+            aboutVM.Teachers = _context.Teachers.Include(t => t.Skill).Include(t => t.Contact).ToList();
+            aboutVM.Events = _context.Events.ToList();
             return View(aboutVM);
         }
     }

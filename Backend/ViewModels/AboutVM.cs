@@ -8,5 +8,8 @@ namespace Backend.ViewModels
 
         public AboutVideo AboutVideo { get; set; }
         public AboutBanner AboutBanner { get; set; }
+        public List<Teacher> Teachers { get; set; }
+
+        public List<Event> Events { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace Backend.Controllers
         public IActionResult BlogDetails(int id)
         {
             var findedBlog = _context.Blogs.FirstOrDefault(c => c.Id == id);
-            BlogPrivateVM blogPrivateVM = new BlogPrivateVM();
+            BlogPrivateVM blogPrivateVM = new();
 
             blogPrivateVM.courses = _context.Courses.ToList();
             blogPrivateVM.ImageUrl = findedBlog.ImageUrl;

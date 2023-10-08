@@ -5,7 +5,7 @@ namespace Backend.Entities
     public class Course 
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         public string ImageUrl { get; set; }
 
@@ -13,7 +13,7 @@ namespace Backend.Entities
 
         public int CourseCount { get; set; }
 
-        public FuturesCourse CourseFeatures { get; set; }
+        public FuturesCourse FuturesCourses { get; set; }
         public List<CourseComment> CourseComments { get; set; }
 
     }

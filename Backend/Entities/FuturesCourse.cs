@@ -8,7 +8,7 @@
 
         public string ClassDuration { get; set; }
 
-        public string SkillLevel { get; set; }
+        public string SkillLevel { get; set; } 
 
         public string Languaa { get; set; }
 

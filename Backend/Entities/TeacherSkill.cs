@@ -7,10 +7,12 @@ namespace Backend.Entities
         public int Id { get; set; }
         public string SkillName { get; set; }
 
-        public int SkillPercentage { get; set; }
+        public string SkillPercentage { get; set; }
 
         public int TeacherId { get; set; }
 
         public Teacher Teachers { get; set; }
+
+        
     }
 }

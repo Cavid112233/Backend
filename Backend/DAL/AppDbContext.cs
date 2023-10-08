@@ -33,5 +33,7 @@ namespace Backend.DAL
 
         public DbSet<TeacherContact> TeacherContact { get; set; }
         public DbSet<FuturesCourse> FuturesCourses { get; set; }
+        public DbSet<EventTellUs> EventTellUs { get; set; }
+        public DbSet<TellUs> TellUs { get; set; }
     }
 }

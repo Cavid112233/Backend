@@ -31,10 +31,24 @@ namespace Backend.Controllers
 
 
 
-            TeacherVM teacherVM = new();
+            var findedteacher = _appDbContext.Teachers.Include(t => t.Skill).Include(t => t.Contact).FirstOrDefault(t => t.Id == id);
+            var contact = _appDbContext.TeacherContact.FirstOrDefault(t => t.TeacherId == findedteacher.Id);
+            TeacherPrivateVM teacherPrivateVM = new();
 
-            teacherVM.Teachers = _appDbContext.Teachers.Include(t => t.Skill).Include(t => t.Contact).ToList();
-            return View(teacherVM);
+            teacherPrivateVM.TeacherName = findedteacher.TeacherName;
+            teacherPrivateVM.Hobbies = findedteacher.Hobbies;
+            teacherPrivateVM.skills = _appDbContext.TeacherSkill.Where(ts => ts.TeacherId == findedteacher.Id).ToList();
+
+            teacherPrivateVM.Experience = findedteacher.Experience;
+            teacherPrivateVM.Profession = findedteacher.Profession;
+            teacherPrivateVM.Degree = findedteacher.Degree;
+            teacherPrivateVM.AboutDesc = findedteacher.AboutDesc;
+            teacherPrivateVM.ImageUrl = findedteacher.ImageUrl;
+            teacherPrivateVM.Faculty = findedteacher.Faculty;
+            teacherPrivateVM.ContactVM = new ContactVM(contact.Email, contact.Skype, contact.Vimeo, contact.Pinterest, contact.Pinterest, contact.Facebook, contact.PhoneCall);
+
+
+            return View(teacherPrivateVM);
 
         }
     }

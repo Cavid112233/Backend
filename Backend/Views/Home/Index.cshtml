@@ -6,9 +6,9 @@
         <section id="slider-container" class="slider-area"> 
             <div class="slider-owl owl-theme owl-carousel"> 
                 <!-- Start Slingle Slide -->
-        @foreach(var item in Model.Sliders)
+        @foreach(var item in Model.SliderContents)
         {
-            <div class="single-slide item" style="background-image: url(/img/slider/@item.ImageUrl)">
+            <div class="single-slide item" style="background-image: url(/img/slider/@item.ImageURL)">
                 <!-- Start Slider Content -->
                 <div class="slider-content-area">
                     <div class="container">
@@ -18,8 +18,8 @@
                                     <div class="slide-content">
                                         <h3>@item.Title </h3>
                                     
-                                        <p>@item.Description  </p>
-                                        <a class="default-btn" href="about.html">@item.ButtonTitle</a>
+                                        <p>@item.Desc</p>
+                                        <a class="default-btn" href="about.html">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +215,7 @@
                                 <p>@item.Description  <i class="fa fa-comments-o"></i> 4</p>
                             </div>
                             <div class="blog-bottom">
-                                <h2><a asp-controller="blog" asp-action="blogdetails" asp-route-id="@item.Id">@item.TitleName.Substring(0,60)) </a></h2>
+                                <h2><a asp-controller="blog" asp-action="blogdetails" asp-route-id="@item.Id">@item.TitleName </a></h2>
                                 <a asp-controller="blog" asp-action="blogdetails" asp-route-id="@item.Id">read more</a>
                             </div>
                         </div>

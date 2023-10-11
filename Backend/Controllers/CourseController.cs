@@ -8,11 +8,18 @@ namespace Backend.Controllers
     public class CourseController : Controller
     {
         private readonly AppDbContext _appDbContext;
+        public CourseController(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
 
         public IActionResult Index()
         {
             CourseVM courseVM = new CourseVM();
-            courseVM.Courses = _appDbContext.Courses.Include(c => c.FuturesCourses).ToList();
+            courseVM.Courses = _appDbContext.Courses
+                .Include(c => c.FuturesCourses)
+                .Include(c => c.CourseComments)
+                .ToList();
             return View(courseVM);
         }
         public IActionResult CourseDetails(int? id)

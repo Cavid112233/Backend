@@ -1,0 +1,9 @@
+﻿﻿
+@model Blog
+
+@{
+    ViewData["Title"] = "index";
+}
+<h4>@Model.TitleName</h4>
+<h2>@Model.Description</h2>
+<a asp-controller="blog" asp-action="index">Go Back</a>

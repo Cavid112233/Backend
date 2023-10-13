@@ -1,0 +1,60 @@
+﻿ ﻿
+
+@model EventUpdateVM
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Events Form</h4>
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">EventName</label>
+                    <input asp-for="EventName" class="form-control" placeholder="EventName">
+                    <span class="text-danger" asp-validation-for="EventName"> </span>
+                </div>
+                <select asp-for="SpeakersIds" asp-items="@(new SelectList(Model.Speakers , nameof(TellUs.Id), nameof(TellUs.SpeakerName)))" class="form-select">
+                </select>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">DateStart</label>
+                    <input asp-for="DateStart" class="form-control" placeholder="DateStart">
+                    <span class="text-danger" asp-validation-for="DateStart"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">DateEnd</label>
+                    <input asp-for="DateEnd" class="form-control" placeholder="DateEnd">
+                    <span class="text-danger" asp-validation-for="DateEnd"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Venue</label>
+                    <input asp-for="Venue" class="form-control" placeholder="Venue">
+                    <span class="text-danger" asp-validation-for="Venue"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">ExactDate</label>
+                    <input asp-for="ExactDate" class="form-control" placeholder="ExactDate">
+                    <span class="text-danger" asp-validation-for="ExactDate"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Description</label>
+                    <input asp-for="Description" class="form-control" placeholder="Description">
+                    <span class="text-danger" asp-validation-for="Description"> </span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername1">EventPhoto</label>
+                    <input asp-for="Photo" class="form-control" placeholder="EventPhoto">
+                    <span class="text-danger" asp-validation-for="Photo"> </span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button asp-controller="event" asp-action="index" class="btn btn-light">Go Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <partial name="_ValidationPartial" />
+}

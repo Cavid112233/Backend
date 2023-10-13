@@ -1,0 +1,24 @@
+﻿  @model List<Event>
+  ﻿
+  @{
+    ViewData["Title"] = "detail";
+  }
+ @if(Model.Count>0)
+ {
+    @foreach(var events in Model)
+    {
+        <h4>@events.EventName</h4>
+        @foreach(var eventspeaker in events.EventTellUses)
+        {
+            <h1>@eventspeaker.TellUs.SpeakerName</h1>
+        }
+        <hr />
+      
+    }
+       
+    
+ }
+ else
+ {
+    <h1>empty list</h1>
+ }

@@ -87,7 +87,7 @@ namespace Backend.Areas.AdminArea.Controllers
             TeacherSkill skill = new()
             {
                 Teachers = teacher,
-                SkillPercantege = createTeacherVM.SkillPercantege,
+                SkillPercentage = createTeacherVM.SkillPercantege,
                 SkillName = createTeacherVM.SkillName
             };
 
@@ -188,7 +188,7 @@ namespace Backend.Areas.AdminArea.Controllers
 
             var existSkill = _appDbContext.TeacherSkill.FirstOrDefault(tc => tc.TeacherId == existTeacher.Id);
 
-            existSkill.SkillPercantege = updateTeacherVM.SkillPercantege;
+            existSkill.SkillPercentage = updateTeacherVM.SkillPercantege;
             existSkill.SkillName = updateTeacherVM.SkillName;
 
 

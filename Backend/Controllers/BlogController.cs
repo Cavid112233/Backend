@@ -28,7 +28,7 @@ namespace Backend.Controllers
             blogPrivateVM.ImageUrl = findedBlog.ImageUrl;
             blogPrivateVM.TitleName = findedBlog.TitleName;
             blogPrivateVM.Description = findedBlog.Description;
-            return View();
+            return View(blogPrivateVM);
         }
     }
 }

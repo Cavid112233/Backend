@@ -168,15 +168,12 @@ namespace Backend.Areas.AdminArea.Controllers
             }
 
             void UpdateEventSpeaker()
-            {
-                //deyiseceyimiz modelin movcud datalari
+            { 
                 var existEventSpeakersIdInDb = existEvent.EventTellUses.Select(es => es.SpeakersId).ToList();
 
-                //deyiseceyimiz modelin update halinda yeni secilenlerden evvelki silinecek olanlarin id si.
                 var existEventSpeakersIdsToRemove = existEventSpeakersIdInDb.Except(updateEventVM.SpeakersIds).ToList();
 
 
-                //deyiseceyimiz modelin icindeki yeni gelen many to many datalarin id si.
                 var existEventSpeakerNewIdsToAdd = updateEventVM.SpeakersIds.Except(existEventSpeakersIdInDb).ToList();
 
                 existEvent.EventTellUses.RemoveAll(es => existEventSpeakersIdsToRemove.Contains(es.SpeakersId));

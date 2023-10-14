@@ -39,7 +39,7 @@ namespace Backend.Controllers
             vm.StudentsCount = findedcourse.FuturesCourses.StudentsCount;
             vm.AssestmentsType = findedcourse.FuturesCourses.AssestmentsType;
             vm.CourseFee = findedcourse.FuturesCourses.CourseFee;
-            return View();
+            return View(vm);
         }
     }
 }

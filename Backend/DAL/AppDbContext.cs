@@ -1,11 +1,12 @@
 ﻿using Backend.Entities;
 using Backend.Entities.ChooseArea;
 using Backend.Entities.SliderSection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.DAL
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
